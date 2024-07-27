@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tipkle/core/viewmodels/home_viewmodel.dart';
-import 'package:tipkle/ui/widget/article_card.dart';
 import 'package:tipkle/ui/widget/base_widget.dart';
 import 'package:tipkle/ui/widget/search_textfield.dart';
 
