@@ -48,7 +48,7 @@ class ArticleCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: EdgeInsets.only(bottom: 15),
                   child: SizedBox(

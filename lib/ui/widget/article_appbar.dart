@@ -85,7 +85,7 @@ class ArticleAppbar extends StatelessWidget {
                   bottom: 10,
                   right: 0,
                   child: Image.asset(
-                    AssetPaths.tipkeCertImage,
+                    AssetPaths.tipkleCertImage,
                     width: 130,
                     height: 130,
                   ),
