@@ -3,4 +3,7 @@ class AssetPaths {
   static const String searchIcon = 'assets/icons/search_icon.svg';
   static const String kakaoIcon = 'assets/icons/kakao_icon.svg';
   static const String naverIcon = 'assets/icons/naver_icon.svg';
+
+  static const String titleImage = 'assets/images/title_image.png';
+  static const String tipkeCertImage = 'assets/images/tipkle_cert.png';
 }

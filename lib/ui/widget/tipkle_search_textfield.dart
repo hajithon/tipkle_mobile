@@ -20,11 +20,12 @@ class SearchTextField extends StatelessWidget {
     return TextField(
       textAlign: TextAlign.start,
       textAlignVertical: TextAlignVertical.center,
-      cursorColor: AppColors.black,
+      cursorColor: AppColors.primary,
       style: AppTextStyles.body1Regular,
       decoration: InputDecoration(
+        hintText: "팁끌보드 제목을 입력해보세요",
         contentPadding: const EdgeInsets.symmetric(vertical: 8),
-        fillColor: AppColors.lightGray,
+        fillColor: AppColors.cardBackground,
         filled: true,
         prefixIconConstraints: const BoxConstraints(
             minWidth: AppValues.textFieldHeight,
@@ -40,8 +41,7 @@ class SearchTextField extends StatelessWidget {
               ),
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius:
-              BorderRadius.circular(AppValues.circularBoxBorderRadius),
+          borderRadius: BorderRadius.circular(5),
         ),
       ),
     );

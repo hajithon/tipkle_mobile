@@ -3,6 +3,8 @@ import 'package:tipkle/core/viewmodels/post_tip_viewmodel.dart';
 import 'package:tipkle/ui/widget/base_widget.dart';
 
 class PostTipView extends StatefulWidget {
+  const PostTipView({super.key});
+
   @override
   _PostTipViewState createState() => _PostTipViewState();
 }

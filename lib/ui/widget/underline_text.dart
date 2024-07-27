@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class UnderlinedText extends StatelessWidget {
   final String text;
   final TextStyle textStyle;
-  final Color underlineColor;
+  final Color color;
   final double underlineThickness;
 
   const UnderlinedText({
     Key? key,
     required this.text,
     required this.textStyle,
-    required this.underlineColor,
+    required this.color,
     required this.underlineThickness,
   }) : super(key: key);
 
@@ -24,7 +24,7 @@ class UnderlinedText extends StatelessWidget {
         children: [
           Text(
             text,
-            style: textStyle,
+            style: textStyle.copyWith(color: color),
           ),
           Positioned(
             bottom: -underlineThickness / 2,
@@ -32,7 +32,7 @@ class UnderlinedText extends StatelessWidget {
             right: 0,
             child: Container(
               height: underlineThickness,
-              color: underlineColor,
+              color: color,
             ),
           ),
         ],

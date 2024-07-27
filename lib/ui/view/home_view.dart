@@ -81,13 +81,14 @@ class _HomeViewState extends State<HomeView> {
                         TabBar(
                           splashFactory: NoSplash.splashFactory,
                           dividerColor: AppColors.lightGray,
-                          indicatorColor: AppColors.black,
+                          indicatorColor: AppColors.primary,
                           indicatorWeight: 2.5,
                           indicatorSize: TabBarIndicatorSize.tab,
                           isScrollable: false,
-                          labelColor: AppColors.black,
+                          labelColor: AppColors.primary,
                           unselectedLabelColor: AppColors.gray,
-                          labelStyle: AppTextStyles.body3Medium,
+                          labelStyle: AppTextStyles.subhead4Bold,
+                          unselectedLabelStyle: AppTextStyles.subhead4SemiBold,
                           tabs: const <Widget>[
                             Tab(text: 'IT'),
                             Tab(text: '예술'),

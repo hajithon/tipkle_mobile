@@ -1,6 +1,7 @@
 import 'package:tipkle/core/constants/route_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:tipkle/ui/view/article_view.dart';
+import 'package:tipkle/ui/view/bookmarked_question_view.dart';
 import 'package:tipkle/ui/view/home_view.dart';
 import 'package:tipkle/ui/view/login_view.dart';
 import 'package:tipkle/ui/view/mypage_view.dart';
@@ -19,6 +20,8 @@ class Router {
         return MaterialPageRoute(builder: (_) => ArticleView());
       case RoutePaths.PostTip:
         return MaterialPageRoute(builder: (_) => PostTipView());
+      case RoutePaths.BookmarkedQuestion:
+        return MaterialPageRoute(builder: (_) => BookmarkedQuestionView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

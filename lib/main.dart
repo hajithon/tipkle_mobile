@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
           primaryColor: AppColors.primary,
-          scaffoldBackgroundColor: AppColors.background,
+          scaffoldBackgroundColor: AppColors.white,
           splashColor: AppColors.transparent,
           appBarTheme: const AppBarTheme(
-            backgroundColor: AppColors.background,
+            backgroundColor: AppColors.white,
             iconTheme: IconThemeData(
               color: AppColors.primary,
             ),
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        initialRoute: RoutePaths.Home,
+        initialRoute: RoutePaths.Login,
         onGenerateRoute: router.Router.generateRoute,
       ),
     );
