@@ -35,7 +35,10 @@ class MypageView extends StatelessWidget {
                     MypageButton(
                       imagePath: AssetPaths.bookmarkedTipkleImage,
                       text: "북마크한 팁끌보드",
-                      onTapFuction: () {},
+                      onTapFuction: () {
+                        Navigator.of(context)
+                            .pushNamed(RoutePaths.BookmarkedQuestion);
+                      },
                     ),
                     MypageButton(
                       imagePath: AssetPaths.bookmarkedTipImage,
