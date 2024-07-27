@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tipkle/core/constants/app_values.dart';
 import 'package:tipkle/core/constants/asset_paths.dart';
+import 'package:tipkle/core/constants/route_paths.dart';
 import 'package:tipkle/core/viewmodels/home_viewmodel.dart';
 import 'package:tipkle/ui/design_system/app_colors.dart';
 import 'package:tipkle/ui/design_system/font_styles.dart';
+import 'package:tipkle/ui/widget/article_card.dart';
 import 'package:tipkle/ui/widget/base_widget.dart';
 import 'package:tipkle/ui/widget/tipkle_search_textfield.dart';
 
@@ -62,9 +65,13 @@ class _HomeViewState extends State<HomeView> {
                                 ),
                               ),
                             ),
-                            IconButton(
-                              icon: SvgPicture.asset(AssetPaths.userIcon),
-                              onPressed: () {},
+                            const SizedBox(width: 10),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context)
+                                    .pushNamed(RoutePaths.Mypage);
+                              },
+                              child: SvgPicture.asset(AssetPaths.userIcon),
                             ),
                           ],
                         ),
@@ -79,7 +86,7 @@ class _HomeViewState extends State<HomeView> {
                           indicatorSize: TabBarIndicatorSize.tab,
                           isScrollable: false,
                           labelColor: AppColors.black,
-                          unselectedLabelColor: AppColors.lightGray,
+                          unselectedLabelColor: AppColors.gray,
                           labelStyle: AppTextStyles.body3Medium,
                           tabs: const <Widget>[
                             Tab(text: 'IT'),
@@ -104,7 +111,13 @@ class _HomeViewState extends State<HomeView> {
                 ? const Center(child: Text('검색 결과를 보여줍니다.'))
                 : TabBarView(
                     children: <Widget>[
-                      Center(child: Text('탭 1의 내용')),
+                      ListView.builder(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: AppValues.horizontalPadding),
+                        itemCount: 10,
+                        itemBuilder: (BuildContext context, int index) =>
+                            const ArticleCard(),
+                      ),
                       Center(child: Text('탭 2의 내용')),
                       Center(child: Text('탭 3의 내용')),
                       Center(child: Text('탭 4의 내용')),

@@ -16,22 +16,27 @@ class UnderlinedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Text(
-          text,
-          style: textStyle,
-        ),
-        Positioned(
-          bottom: -underlineThickness / 2,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: underlineThickness,
-            color: underlineColor,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pop();
+      },
+      child: Stack(
+        children: [
+          Text(
+            text,
+            style: textStyle,
           ),
-        ),
-      ],
+          Positioned(
+            bottom: -underlineThickness / 2,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: underlineThickness,
+              color: underlineColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -23,7 +23,7 @@ class SearchTextField extends StatelessWidget {
       cursorColor: AppColors.black,
       style: AppTextStyles.body1Regular,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(vertical: 8),
         fillColor: AppColors.lightGray,
         filled: true,
         prefixIconConstraints: const BoxConstraints(

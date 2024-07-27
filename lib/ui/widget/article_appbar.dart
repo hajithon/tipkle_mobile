@@ -23,13 +23,12 @@ class ArticleAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                  child: UnderlinedText(
+              UnderlinedText(
                 text: "IT",
                 textStyle: AppTextStyles.body1Regular,
                 underlineColor: AppColors.black,
                 underlineThickness: 2,
-              )),
+              ),
               const SizedBox(height: 20),
               Text(
                 "중앙",

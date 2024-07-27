@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        initialRoute: RoutePaths.Article,
+        initialRoute: RoutePaths.Home,
         onGenerateRoute: router.Router.generateRoute,
       ),
     );
