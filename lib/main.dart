@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           primaryColor: AppColors.primary,
           scaffoldBackgroundColor: AppColors.background,
+          splashColor: AppColors.transparent,
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColors.background,
             iconTheme: IconThemeData(
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        initialRoute: RoutePaths.Home,
+        initialRoute: RoutePaths.Article,
         onGenerateRoute: router.Router.generateRoute,
       ),
     );

@@ -12,7 +12,7 @@ class ArticleView extends StatelessWidget {
       builder: (BuildContext context, ArticleViewmodel model, _) {
         return Scaffold(
           appBar: ArticleAppBar(),
-          body: SingleChildScrollView(
+          body: const SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(height: 20),

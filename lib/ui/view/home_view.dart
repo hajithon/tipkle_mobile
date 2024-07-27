@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tipkle/core/constants/asset_paths.dart';
 import 'package:tipkle/core/viewmodels/home_viewmodel.dart';
+import 'package:tipkle/ui/design_system/app_colors.dart';
+import 'package:tipkle/ui/design_system/font_styles.dart';
 import 'package:tipkle/ui/widget/base_widget.dart';
-import 'package:tipkle/ui/widget/search_textfield.dart';
+import 'package:tipkle/ui/widget/tipkle_search_textfield.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -34,7 +38,7 @@ class _HomeViewState extends State<HomeView> {
           length: 5,
           child: Scaffold(
             appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(125),
+              preferredSize: const Size.fromHeight(115),
               child: AppBar(
                 flexibleSpace: SafeArea(
                   child: Column(
@@ -49,30 +53,40 @@ class _HomeViewState extends State<HomeView> {
                             Expanded(
                               child: Focus(
                                 onFocusChange: _onSearchFieldFocusChange,
-                                child: SearchTextField(
-                                  showBackButton: _isSearching,
-                                  onBackPressed: _exitSearch,
+                                child: SizedBox(
+                                  height: 40,
+                                  child: SearchTextField(
+                                    showBackButton: _isSearching,
+                                    onBackPressed: _exitSearch,
+                                  ),
                                 ),
                               ),
                             ),
                             IconButton(
-                              icon: const Icon(Icons.settings),
+                              icon: SvgPicture.asset(AssetPaths.userIcon),
                               onPressed: () {},
                             ),
                           ],
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       if (!_isSearching) ...[
-                        const TabBar(
-                          indicatorSize: TabBarIndicatorSize.label,
+                        TabBar(
+                          splashFactory: NoSplash.splashFactory,
+                          dividerColor: AppColors.lightGray,
+                          indicatorColor: AppColors.black,
+                          indicatorWeight: 2.5,
+                          indicatorSize: TabBarIndicatorSize.tab,
                           isScrollable: false,
-                          tabs: <Widget>[
-                            Tab(text: '탭 1'),
-                            Tab(text: '탭 2'),
-                            Tab(text: '탭 3'),
-                            Tab(text: '탭 4'),
-                            Tab(text: '탭 5'),
+                          labelColor: AppColors.black,
+                          unselectedLabelColor: AppColors.lightGray,
+                          labelStyle: AppTextStyles.body3Medium,
+                          tabs: const <Widget>[
+                            Tab(text: 'IT'),
+                            Tab(text: '예술'),
+                            Tab(text: '금융'),
+                            Tab(text: '음식'),
+                            Tab(text: '여행'),
                           ],
                         ),
                       ] else ...[
