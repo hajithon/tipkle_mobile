@@ -82,34 +82,132 @@ class _HomeViewState extends State<HomeView> {
               children: [
                 TabBarView(
                   children: <Widget>[
-                    ListView.builder(
+                    ///////////IT////////////
+                    ListView(
                       padding: const EdgeInsets.symmetric(
                           horizontal: AppValues.horizontalPadding),
-                      itemCount: 10,
-                      itemBuilder: (BuildContext context, int index) {
-                        if (index == 9) {
-                          return const SizedBox(height: 200, width: 300);
-                        }
-                        return const ArticleCard();
-                      },
+                      children: [
+                        ArticleCard(
+                          bookMarked: model.bookmarked[0],
+                          tags: const ['#디자인', '#플러그인', '#UX/UI'],
+                          title: '피그마 꿀 팁 알려주세요.',
+                        ),
+                        ArticleCard(
+                          bookMarked: model.bookmarked[1],
+                          tags: const ['#소프트웨어'],
+                          title: '클라우드 비용 절감 방법 추천해주세요',
+                        ),
+                        ArticleCard(
+                          bookMarked: model.bookmarked[2],
+                          tags: const ['#디자인', '#웹', '#모바일'],
+                          title: '효과적인 데이터 시각화 툴은?',
+                        ),
+                        ArticleCard(
+                          bookMarked: model.bookmarked[3],
+                          tags: const ['#인공지능', '#데이터베이스', '#코딩'],
+                          title: 'AI 학습 자료 추천해주세요',
+                        ),
+                        ArticleCard(
+                          bookMarked: model.bookmarked[4],
+                          tags: const ['#데이터베이스', '#소프트웨어', '#인공지능'],
+                          title: '최신 사이버 보안 트렌드는?',
+                        ),
+                        const SizedBox(height: 300),
+                      ],
                     ),
-                    Center(child: Text('탭 2의 내용')),
-                    Center(child: Text('탭 3의 내용')),
-                    Center(child: Text('탭 4의 내용')),
-                    Center(child: Text('탭 5의 내용')),
+                    ///////////IT////////////
+                    Center(
+                      child: Container(
+                        height: 300,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              AssetPaths.expertImage,
+                              width: 100,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              "아직 데이터가 없어요.",
+                              style: AppTextStyles.body1Medium,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    ///////////IT////////////
+                    Center(
+                      child: Container(
+                        height: 300,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              AssetPaths.expertImage,
+                              width: 100,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              "아직 데이터가 없어요.",
+                              style: AppTextStyles.body1Medium,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    ///////////IT////////////
+                    Center(
+                      child: Container(
+                        height: 300,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              AssetPaths.expertImage,
+                              width: 100,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              "아직 데이터가 없어요.",
+                              style: AppTextStyles.body1Medium,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    ///////////IT////////////
+                    Center(
+                      child: Container(
+                        height: 300,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              AssetPaths.expertImage,
+                              width: 100,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              "아직 데이터가 없어요.",
+                              style: AppTextStyles.body1Medium,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    height: 300,
+                    height: 200,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.white.withOpacity(0),
-                          Colors.white.withOpacity(0.4),
+                          Colors.white.withOpacity(0.8),
                           Colors.white,
                         ],
                       ),

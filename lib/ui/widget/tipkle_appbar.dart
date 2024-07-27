@@ -11,7 +11,7 @@ class TipkleAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title,
-        style: AppTextStyles.body1Medium,
+        style: AppTextStyles.body2Medium,
       ),
     );
   }

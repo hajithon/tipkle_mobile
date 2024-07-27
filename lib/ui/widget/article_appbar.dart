@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tipkle/core/constants/asset_paths.dart';
+import 'package:tipkle/core/viewmodels/article_viewmodel.dart';
 import 'package:tipkle/ui/design_system/app_colors.dart';
 import 'package:tipkle/ui/design_system/font_styles.dart';
 import 'package:tipkle/ui/widget/tag.dart';
@@ -21,7 +23,9 @@ class CustomAppBarShape extends CustomClipper<Path> {
 }
 
 class ArticleAppbar extends StatelessWidget {
-  const ArticleAppbar({super.key});
+  const ArticleAppbar({super.key, required this.model});
+
+  final ArticleViewmodel model;
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +44,39 @@ class ArticleAppbar extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Stack(
               children: [
+                Positioned(
+                  bottom: 10,
+                  right: 0,
+                  child: Transform.rotate(
+                    angle: 0.2,
+                    child: Image.asset(
+                      AssetPaths.tipkleCertImage,
+                      width: 130,
+                      height: 130,
+                    ),
+                  ),
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: const Icon(Icons.arrow_back_ios),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: const Icon(Icons.arrow_back_ios),
+                        ),
+                        const Spacer(),
+                        IconButton(
+                          onPressed: () {
+                            model.toggleBookmark();
+                          },
+                          icon: SvgPicture.asset(model.bookmarked
+                              ? AssetPaths.bookmarked
+                              : AssetPaths.notBookmarked),
+                        ),
+                      ],
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +91,7 @@ class ArticleAppbar extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      "중앙",
+                      "피그마 꿀 팁 알려주세요",
                       style: AppTextStyles.display1Bold,
                     ),
                     const SizedBox(height: 5),
@@ -72,23 +101,13 @@ class ArticleAppbar extends StatelessWidget {
                       spacing: 5,
                       runSpacing: 5,
                       children: [
-                        Tag(text: "태그 리스트1"),
-                        Tag(text: "태그 리스트1"),
-                        Tag(text: "태그 리스트1"),
-                        Tag(text: "태그 리스트1232323"),
+                        Tag(text: "#디자인"),
+                        Tag(text: "#플러그인"),
+                        Tag(text: "#UX/UI"),
                       ],
                     ),
                     const SizedBox(height: 20),
                   ],
-                ),
-                Positioned(
-                  bottom: 10,
-                  right: 0,
-                  child: Image.asset(
-                    AssetPaths.tipkleCertImage,
-                    width: 130,
-                    height: 130,
-                  ),
                 ),
               ],
             ),

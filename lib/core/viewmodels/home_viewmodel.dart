@@ -16,5 +16,13 @@ class HomeViewModel extends BaseModel {
     setBusy(false);
   }
 
+  List<bool> bookmarked = [
+    false,
+    true,
+    true,
+    false,
+    false,
+  ];
+
   Future<void> fetch() async {}
 }

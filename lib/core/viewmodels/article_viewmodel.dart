@@ -16,5 +16,12 @@ class ArticleViewmodel extends BaseModel {
     setBusy(false);
   }
 
+  bool bookmarked = false;
+
+  void toggleBookmark() {
+    bookmarked = !bookmarked;
+    notifyListeners();
+  }
+
   Future<void> fetch() async {}
 }

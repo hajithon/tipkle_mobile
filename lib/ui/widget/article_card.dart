@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tipkle/core/constants/asset_paths.dart';
 import 'package:tipkle/core/constants/route_paths.dart';
 import 'package:tipkle/ui/design_system/app_colors.dart';
 import 'package:tipkle/ui/design_system/font_styles.dart';
 import 'package:tipkle/ui/widget/tag.dart';
 
 class ArticleCard extends StatelessWidget {
-  const ArticleCard({super.key});
+  const ArticleCard(
+      {super.key,
+      required this.bookMarked,
+      required this.tags,
+      required this.title});
+
+  final bool bookMarked;
+  final List<String> tags;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +52,7 @@ class ArticleCard extends StatelessWidget {
                   padding:
                       const EdgeInsets.only(top: 20.0, left: 20.0, right: 20),
                   child: Text(
-                    '제목',
+                    title,
                     style: AppTextStyles.body3Medium.copyWith(
                       color: AppColors.black,
                     ),
@@ -50,18 +60,18 @@ class ArticleCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
+                  padding: const EdgeInsets.only(bottom: 15),
                   child: SizedBox(
                     height: 25,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 5,
+                      itemCount: tags.length,
                       itemBuilder: (context, index) {
                         double paddingVal = index == 0 ? 20 : 5;
 
                         return Padding(
                           padding: EdgeInsets.only(left: paddingVal),
-                          child: const Tag(text: "태그"),
+                          child: Tag(text: tags[index]),
                         );
                       },
                     ),
@@ -69,6 +79,18 @@ class ArticleCard extends StatelessWidget {
                 ),
               ],
             ),
+            bookMarked
+                ? Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: SvgPicture.asset(
+                        AssetPaths.bookmarkSharp,
+                        width: 24,
+                        height: 24,
+                      ),
+                    ),
+                  )
+                : const SizedBox(),
           ],
         ),
       ),
